@@ -16,7 +16,7 @@
 }
 
 .load__container p {
-    margin-bottom: 30px;
+    margin: 0 0 30px;
     font-size: 20px;
     font-weight: 700;
     text-align: center;
@@ -31,7 +31,7 @@
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
-    animation: 2s linear infinite train;
+    animation: train 2s linear infinite;
 }
 
 @keyframes train {
@@ -60,7 +60,7 @@
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
-    animation: 2s linear infinite line;
+    animation: line 2s linear infinite;
 }
 
 @keyframes line {
@@ -79,4 +79,5 @@
         margin-right: 250px;
         opacity: 0.3;
         width: 10px;
-    } }
+    }
+}

@@ -5,25 +5,20 @@ import "./Modal.css";
 function Modal({ status, display, onChange, text }) {
     const bgStyle = status === "error" ? { backgroundColor: "#ff3d0061" } : { backgroundColor: "#fff5005c" };
 
-    const handleClick = (e) => {
-        e.preventDefault();
-        if (e.target.closest(".modal__btn")) {
-            onChange("none");
-        } else if (!e.target.closest(".modal__container")) {
-            onChange("none"); 
-        }
+    const handleClose = () => {
+        onChange("none");
     };
 
     return (
-        <div className="modal__wrapper" style={{ display: display ? 'flex' : 'none' }} onClick={handleClick}>
-            <div className="modal__container">
+        <div className="modal__wrapper" style={{ display: display ? 'flex' : 'none' }}>
+            <div className="modal__container" onClick={(e) => e.stopPropagation()}>
                 <div className={`modal__header modal__header-${status}`} style={bgStyle}></div>
                 <div className="modal__content">
                     <p className="modal__title">{status === "error" ? "Сообщение об ошибке" : "Информационное сообщение"}</p>
                     <p className="modal__text">{text}</p>
                 </div>
                 <div className="modal__footer">
-                    <button className="modal__btn" type="button">Понятно</button>
+                    <button className="modal__btn" type="button" onClick={handleClose}>Понятно</button>
                 </div>
             </div>
         </div>

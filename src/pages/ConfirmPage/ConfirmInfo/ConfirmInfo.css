@@ -21,14 +21,11 @@
     font-size: 30px;
 }
 
-.confirm-info__train-block .train__price-button {
+.confirm-info__hidden-button {
     display: none;
 }
 
 .confirm-info__btn {
-    /* position: absolute;
-  right: -10px;
-  bottom: 20px; */
     width: fit-content;
     margin-left: auto;
     margin-right: 30px;
@@ -124,9 +121,6 @@
 }
 
 .confirm-info__cost-wrapper .confirm-info__btn {
-    position: relative;
-    right: 0;
-    bottom: 0;
     margin: 30px auto 0 auto;
 }
 
@@ -144,9 +138,6 @@
 }
 
 .confirm-info__payment-wrapper .confirm-info__btn {
-    position: relative;
-    right: 0;
-    bottom: 0;
     align-self: flex-end;
     margin: 0 25px 25px 25px;
 }
