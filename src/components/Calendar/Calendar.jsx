@@ -36,7 +36,7 @@ function Calendar({ name, placeholder, onChange }) {
         });
 
         return () => {
-            element.current.destroy(); // Уничтожение экземпляра при размонтировании
+            element.current.destroy();
         };
     }, [name, onChange]);
 
