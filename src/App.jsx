@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import AppContext from "#context/appContext";
 import RouteContext from "#context/routeContext";
 import OrderContext from "#context/orderContext";
@@ -17,7 +17,6 @@ import ConfirmPage from "./pages/ConfirmPage/ConfirmPage";
 import FinishPage from "./pages/FinishPage/FinishPage";
 import "./App.css";
 
-
 function App() {
     const [appState, setAppState] = useState(initialAppState);
     const [routeState, setRouteState] = useState(initialRouteState);
@@ -25,25 +24,27 @@ function App() {
     const [payState, setPayState] = useState(initialPayState);
 
     return (
-        <div className="app">
-            <AppContext.Provider value={{ appState, setAppState }}>
-                <RouteContext.Provider value={{ routeState, setRouteState }}>
-                    <OrderContext.Provider value={{ orderState, setOrderState }}>
-                        <PayContext.Provider value={{ payState, setPayState }}>
-                            <Routes>
-                                <Route path="/fe-diploma" element={<StartPage />} />
-                                <Route path="/fe-diploma/order" element={<OrderPage />} />
-                                <Route path="/fe-diploma/order/seats" element={<SeatsPage />} />
-                                <Route path="/fe-diploma/order/passengers" element={<PassengersPage />} />
-                                <Route path="/fe-diploma/order/payment" element={<PaymentPage />} />
-                                <Route path="/fe-diploma/order/confirm" element={<ConfirmPage />} />
-                                <Route path="/fe-diploma/finish" element={<FinishPage />} />
-                            </Routes>
-                        </PayContext.Provider>
-                    </OrderContext.Provider>
-                </RouteContext.Provider>
-            </AppContext.Provider>
-        </div>
+        <BrowserRouter>
+            <div className="app">
+                <AppContext.Provider value={{ appState, setAppState }}>
+                    <RouteContext.Provider value={{ routeState, setRouteState }}>
+                        <OrderContext.Provider value={{ orderState, setOrderState }}>
+                            <PayContext.Provider value={{ payState, setPayState }}>
+                                <Routes>
+                                    <Route path="/fe-diploma" element={<StartPage />} />
+                                    <Route path="/fe-diploma/order" element={<OrderPage />} />
+                                    <Route path="/fe-diploma/order/seats" element={<SeatsPage />} />
+                                    <Route path="/fe-diploma/order/passengers" element={<PassengersPage />} />
+                                    <Route path="/fe-diploma/order/payment" element={<PaymentPage />} />
+                                    <Route path="/fe-diploma/order/confirm" element={<ConfirmPage />} />
+                                    <Route path="/fe-diploma/finish" element={<FinishPage />} />
+                                </Routes>
+                            </PayContext.Provider>
+                        </OrderContext.Provider>
+                    </RouteContext.Provider>
+                </AppContext.Provider>
+            </div>
+        </BrowserRouter>
     );
 }
 
