@@ -19,6 +19,7 @@
   },
   "dependencies": {
     "@rollup/plugin-terser": "^0.4.4",
+    "axios": "^1.11.0",
     "bootstrap": "^5.3.3",
     "dotenv": "^16.4.7",
     "prop-types": "^15.8.1",
